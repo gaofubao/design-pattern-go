@@ -1,6 +1,6 @@
-package iterator
+package main
 
-import "testing"
+import "fmt"
 
 // 迭代器接口
 type Iterator interface {
@@ -50,7 +50,7 @@ func (u *UserCollection) CreateIterator() Iterator {
 	}
 }
 
-func TestIterator(t *testing.T) {
+func main() {
 	user1 := &User{
 		Name: "user1",
 		Age:  10,
@@ -68,6 +68,6 @@ func TestIterator(t *testing.T) {
 
 	for iterator.HasNext() {
 		user := iterator.Next()
-		t.Logf("user: %v", user)
+		fmt.Println("user: ", user)
 	}
 }
